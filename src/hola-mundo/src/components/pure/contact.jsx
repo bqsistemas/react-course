@@ -17,7 +17,7 @@ const ContactComponent = ({ contact }) => {
             <h1>Contact name: { contact.name }</h1>
             <h1>Contact last name: { contact.lastName }</h1>
             <h2>Contact email: { contact.email }</h2>
-            <h3>Connected: { contact.connected ? 'Contact on line' : 'Contact not available' }</h3>
+            <h3>Connected: { state ? 'Contact on line' : 'Contact not available' }</h3>
             <button onClick={ changeConnected }>
                 Change state
             </button>
