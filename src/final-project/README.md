@@ -68,11 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-## Project information
-### Components folder: 
-    - container: higher-order components that contain other components
-    - hooks: own hooks or logic with react hooks
-    - routes: relationship of routes with components
-    - pages: contain components that render a navigable page
-    - models: create specify the data types we are going to work with
