@@ -4,6 +4,7 @@ import './App.css';
 // Components
 import Greeting from './components/pure/greeting';
 import GreetingF from './components/pure/greetingF';
+import ContactListComponent from './components/container/contact_list';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         {/* Component Gretting */}
         {/* <Greeting name="Jhon"></Greeting> */}
-        <GreetingF name="Jhon"></GreetingF>
+        {/* <GreetingF name="Jhon"></GreetingF> */}
+        <ContactListComponent></ContactListComponent>
       </header>
     </div>
   );
