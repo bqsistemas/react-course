@@ -6,12 +6,11 @@ import { Contact } from '../../models/contact.class';
 
 const ContactComponent = ({ contact }) => {
 
-    // const [contact, setConnected] = useState(contact);
+    const [state, setState] = useState(contact.connected);
 
-    /* const changeConnected = () => {
-        contact.connected = !contact.connected
-        // setConnected(contact)
-    } */
+    const changeConnected = () => {
+        setState(!state)
+    }
 
     return (
         <div>
@@ -19,6 +18,9 @@ const ContactComponent = ({ contact }) => {
             <h1>Contact last name: { contact.lastName }</h1>
             <h2>Contact email: { contact.email }</h2>
             <h3>Connected: { contact.connected ? 'Contact on line' : 'Contact not available' }</h3>
+            <button onClick={ changeConnected }>
+                Change state
+            </button>
         </div>
     );
 };
