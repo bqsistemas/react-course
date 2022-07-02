@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import createDebug from 'debug'
 import PropTypes from 'prop-types';
 // class
@@ -10,10 +10,20 @@ import TaskComponent from '../pure/task';
 const debug = createDebug('app:components:taskList')
 
 const TaskListComponent = () => {
-    debug('hello world')
     const defaultTask = new Task('Example', 'Default description', false, LEVELS.NORMAL)
+    // Estado del componente
+    const [tasks, setTasks] = useState([defaultTask]);
 
-    const changeState = (id) => {
+    // Control del ciclo de vida del componente
+    useEffect(() => {
+        console.log('Task state has been modified')
+        return () => {
+            console.log('TaskList component is going to unmount')
+        }
+    }, [])
+    
+
+    const changeCompleted = (id) => {
         debug('TODO: Change task´s state')
     }
 

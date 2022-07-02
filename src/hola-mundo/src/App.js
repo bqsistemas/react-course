@@ -9,6 +9,7 @@ import Ejemplo1 from './hooks/Ejemplo1';
 import Ejemplo2 from './hooks/Ejemplo2';
 import MyComponentWithContext from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
+import AllCycles from './hooks/lifecycle/allCycles';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             Contenido del props.children
           </h3>
         </Ejemplo4>
+        {/* <AllCycles></AllCycles> */}
       </header>
     </div>
   );
