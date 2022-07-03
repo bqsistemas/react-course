@@ -13,12 +13,11 @@ import AllCycles from './hooks/lifecycle/allCycles';
 import GreetingStyled from './components/pure/greetingStyled';
 import ClockF from './bootcamp/exercises/exercise_4_5_6/clockF';
 import Father from './components/container/father';
+import ContactListExerciseComponent from './bootcamp/exercises/exercise_7_8_9/contactListExercise';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         {/* Component Gretting */}
         {/* <Greeting name="Jhon"></Greeting> */}
         {/* <GreetingF name="Jhon"></GreetingF> */}
@@ -36,8 +35,8 @@ function App() {
         {/* <AllCycles></AllCycles> */}
         {/* <GreetingStyled name="Jhon"></GreetingStyled> */}
         {/* <ClockF></ClockF> */}
-        <Father></Father>
-      </header>
+        {/* <Father></Father> */}
+        <ContactListExerciseComponent></ContactListExerciseComponent>
     </div>
   );
 }
