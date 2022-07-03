@@ -11,7 +11,7 @@ import MyComponentWithContext from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import AllCycles from './hooks/lifecycle/allCycles';
 import GreetingStyled from './components/pure/greetingStyled';
-import ClockF from './bootcamp/exercises/exercise4_5_6/clockF';
+import ClockF from './bootcamp/exercises/exercise_4_5_6/clockF';
 
 function App() {
   return (
