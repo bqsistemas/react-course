@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { LEVELS } from '../../models/levels.class';
 // class
 import { Task } from '../../models/task.class';
 // styles
@@ -14,6 +15,53 @@ const TaskComponent = ({ task }) => {
         };
     }, [task]);
 
+    // #region HTML Functions
+    /**
+     * Function that returns a Badge
+     * depending on the level of the task
+     */
+    function _htmlTaskLevelBadge() {
+        switch(task.level){
+            case LEVELS.NORMAL:
+                return (
+                    <h6 className='mb-0'>
+                        <span className='badge bg-primary'>
+                            { task.level }
+                        </span>
+                    </h6>
+                )
+            case LEVELS.URGENT:
+                return (
+                    <h6 className='mb-0'>
+                        <span className='badge bg-warning'>
+                            { task.level }
+                        </span>
+                    </h6>
+                )
+            case LEVELS.BLOCKING:
+                return (
+                    <h6 className='mb-0'>
+                        <span className='badge bg-danger'>
+                            { task.level }
+                        </span>
+                    </h6>
+                )
+            default:
+                break
+        }
+    }
+
+    function _htmlTaskCompletedIcon() {
+        if(task.completed)
+            return (<i className='bi-toggle-on' style={ { color: 'green' } }></i>)
+        else 
+            return (<i className='bi-toggle-off' style={ { color: 'grey' } }></i>)
+    }
+    // #endregion
+    
+    // #region CSS Functions
+    // #endregion
+
     return (
         <tr className='fw-normal'>
             <th>
@@ -23,12 +71,12 @@ const TaskComponent = ({ task }) => {
                 <span>{ task.description }</span>
             </td>
             <td className='align-middle'>
-                {/* TODO: Sustituir por un badge */}
-                <span>{ task.level }</span>
+                {/* Execution of function to return badge element */}
+                { _htmlTaskLevelBadge() }
             </td>
             <td className='align-middle'>
-                {/* TODO: Sustituir por íconos */}
-                <span>{ task.level }</span>
+                { _htmlTaskCompletedIcon() }
+                <i className='bi-trash-fill' style={ {color: 'tomato'} }></i>
             </td>
         </tr>
     );
