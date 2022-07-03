@@ -26,11 +26,28 @@ const TaskListComponent = () => {
         return () => {
             console.log('TaskList component is going to unmount')
         }
-    }, [])
-    
+    }, [tasks])
 
-    const changeCompleted = (id) => {
-        debug('TODO: Change task´s state')
+    function _completeTask(task) {
+        const index = tasks.indexOf(task)
+        const tempTasks = [...tasks]
+        tempTasks[index].completed = !task.completed
+        // We update the state of the component with the new list of tasks and it will update the
+        // Iteration of the tasks in order to show the task updated
+        setTasks(tempTasks)
+    }
+
+    function _removeTask(task) {
+        const index = tasks.indexOf(task)
+        const tempTasks = [...tasks]
+        tempTasks.splice(index, 1)
+        setTasks(tempTasks)
+    }
+
+    function _addTask(task) {
+        const tempTasks = [...tasks]
+        tempTasks.push(task)
+        setTasks(tempTasks)
     }
 
     return (
@@ -57,15 +74,21 @@ const TaskListComponent = () => {
                                     return (
                                         <TaskComponent 
                                             key={index} 
-                                            task={task}>
+                                            task={task}
+                                            _complete={_completeTask}
+                                            _remove={_removeTask}
+                                        >
                                         </TaskComponent>
                                     )
                                 })}
                             </tbody>
                         </table>
                     </div>
-                    <TaskFormComponent></TaskFormComponent>
                 </div>
+                <TaskFormComponent
+                    _add={_addTask}
+                >
+                </TaskFormComponent>
             </div>
         </div>
     );
