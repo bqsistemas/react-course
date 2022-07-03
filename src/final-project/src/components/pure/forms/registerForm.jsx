@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
-const RegisterForm = () => {
+const RegisterFormComponent = () => {
 
     const initialData = {
         user: '',
@@ -21,9 +21,9 @@ const RegisterForm = () => {
 };
 
 
-RegisterForm.propTypes = {
+RegisterFormComponent.propTypes = {
 
 };
 
 
-export default RegisterForm;
+export default RegisterFormComponent;

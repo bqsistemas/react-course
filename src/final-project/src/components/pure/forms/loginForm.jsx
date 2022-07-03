@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 
-const LoginForm = () => {
+const LoginFormComponent = () => {
 
     const initialCredentials = {
         user: '',
@@ -20,4 +20,4 @@ const LoginForm = () => {
     );
 }
 
-export default LoginForm;
+export default LoginFormComponent;

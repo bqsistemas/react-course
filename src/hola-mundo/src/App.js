@@ -12,6 +12,7 @@ import Ejemplo4 from './hooks/Ejemplo4';
 import AllCycles from './hooks/lifecycle/allCycles';
 import GreetingStyled from './components/pure/greetingStyled';
 import ClockF from './bootcamp/exercises/exercise_4_5_6/clockF';
+import Father from './components/container/father';
 
 function App() {
   return (
@@ -26,15 +27,16 @@ function App() {
         {/* <Ejemplo1></Ejemplo1> */}
         {/* <Ejemplo2></Ejemplo2> */}
         {/* <MyComponentWithContext></MyComponentWithContext> */}
-        <Ejemplo4 nombre="Jhon">
+        {/* <Ejemplo4 nombre="Jhon"> */}
           {/* Todo lo que hay aquí, es tratado como un props.children */}
-          <h3>
+          {/* <h3>
             Contenido del props.children
           </h3>
-        </Ejemplo4>
+        </Ejemplo4> */}
         {/* <AllCycles></AllCycles> */}
         {/* <GreetingStyled name="Jhon"></GreetingStyled> */}
-        <ClockF></ClockF>
+        {/* <ClockF></ClockF> */}
+        <Father></Father>
       </header>
     </div>
   );
