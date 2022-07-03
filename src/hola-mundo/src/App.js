@@ -10,6 +10,7 @@ import Ejemplo2 from './hooks/Ejemplo2';
 import MyComponentWithContext from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import AllCycles from './hooks/lifecycle/allCycles';
+import GreetingStyled from './components/pure/greetingStyled';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           </h3>
         </Ejemplo4>
         {/* <AllCycles></AllCycles> */}
+        <GreetingStyled name="Jhon"></GreetingStyled>
       </header>
     </div>
   );
