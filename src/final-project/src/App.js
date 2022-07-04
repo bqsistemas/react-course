@@ -1,11 +1,10 @@
 import './App.css';
-import TaskListComponent from './components/container/task_list';
+import TasksPage from './pages/tasks/TasksPage';
 
 function App() {
   return (
     <div className="App">
-      {/* List tasks component */}
-      <TaskListComponent></TaskListComponent>
+      <TasksPage></TasksPage>
     </div>
   );
 }
