@@ -7,9 +7,9 @@ import TasksPage from './pages/tasks/TasksPage';
 function App() {
   return (
     <div className="App">
-      {/* <TasksPage></TasksPage> */}
+      <TasksPage></TasksPage>
       {/* <LoginFormComponent></LoginFormComponent> */}
-      <RegisterFormComponent></RegisterFormComponent>
+      {/* <RegisterFormComponent></RegisterFormComponent> */}
     </div>
   );
 }
