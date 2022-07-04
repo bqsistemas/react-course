@@ -63,7 +63,7 @@ const TaskComponent = ({ task, _complete, _remove }) => {
     // #endregion
 
     return (
-        <tr className='fw-normal'>
+        <tr className={task.completed ? 'task-completed fw-normal' : 'task-pending fw-normal'}>
             <th>
                 <span className='ms-2'>{ task.name }</span>
             </th>
