@@ -15,6 +15,7 @@ import ClockF from './bootcamp/exercises/exercise_4_5_6/clockF';
 import Father from './components/container/father';
 import ContactListExerciseComponent from './bootcamp/exercises/exercise_7_8_9/contactListExercise';
 import OptionalRender from './components/pure/optionalRender';
+import SquareExercise from './bootcamp/exercises/exercises_10_11_12/squareExercise';
 
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
         {/* <ClockF></ClockF> */}
         {/* <Father></Father> */}
         {/* <ContactListExerciseComponent></ContactListExerciseComponent> */}
-        <OptionalRender></OptionalRender>
+        {/* <OptionalRender></OptionalRender> */}
+        <SquareExercise></SquareExercise>
     </div>
   );
 }
