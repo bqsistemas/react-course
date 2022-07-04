@@ -1,4 +1,4 @@
-import { LEVELS } from "./levels.class"
+import { LEVELS } from "./enums.class"
 
 export class Task {
     name = ''

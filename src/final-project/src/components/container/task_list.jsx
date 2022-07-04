@@ -3,7 +3,7 @@ import createDebug from 'debug'
 import PropTypes from 'prop-types';
 // class
 import { Task } from '../../models/task.class';
-import { LEVELS } from '../../models/levels.class';
+import { LEVELS } from '../../models/enums.class';
 // components
 import TaskComponent from '../pure/task';
 import TaskFormComponent from '../pure/forms/taskForm';

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { LEVELS } from '../../models/levels.class';
+import { LEVELS } from '../../models/enums.class';
 // class
 import { Task } from '../../models/task.class';
 // styles
