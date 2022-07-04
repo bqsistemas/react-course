@@ -14,6 +14,7 @@ import GreetingStyled from './components/pure/greetingStyled';
 import ClockF from './bootcamp/exercises/exercise_4_5_6/clockF';
 import Father from './components/container/father';
 import ContactListExerciseComponent from './bootcamp/exercises/exercise_7_8_9/contactListExercise';
+import OptionalRender from './components/pure/optionalRender';
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
         {/* <GreetingStyled name="Jhon"></GreetingStyled> */}
         {/* <ClockF></ClockF> */}
         {/* <Father></Father> */}
-        <ContactListExerciseComponent></ContactListExerciseComponent>
+        {/* <ContactListExerciseComponent></ContactListExerciseComponent> */}
+        <OptionalRender></OptionalRender>
     </div>
   );
 }
