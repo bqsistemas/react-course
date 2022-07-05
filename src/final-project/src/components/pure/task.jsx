@@ -6,7 +6,7 @@ import { Task } from '../../models/task.class';
 // styles
 import '../../styles/task.scss'
 
-const TaskComponent = ({ task, _complete, _remove }) => {
+const TaskComponent = ({ task, _complete, _remove, _toDetail }) => {
 
     useEffect(() => {
         console.log('Created task')
@@ -65,7 +65,7 @@ const TaskComponent = ({ task, _complete, _remove }) => {
     return (
         <tr className={task.completed ? 'task-completed fw-normal' : 'task-pending fw-normal'}>
             <th>
-                <span className='ms-2'>{ task.name }</span>
+                <span onClick={() => _toDetail(task)}  className='ms-2 task-action'>{ task.name }</span>
             </th>
             <td className='align-middle'>
                 <span>{ task.description }</span>
@@ -86,7 +86,8 @@ const TaskComponent = ({ task, _complete, _remove }) => {
 TaskComponent.propTypes = {
     task: PropTypes.instanceOf(Task).isRequired,
     _complete: PropTypes.func.isRequired,
-    _remove: PropTypes.func.isRequired
+    _remove: PropTypes.func.isRequired,
+    _toDetail: PropTypes.func.isRequired,
 };
 
 

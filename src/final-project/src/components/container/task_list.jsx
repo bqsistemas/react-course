@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate  } from 'react-router-dom'
+
 import createDebug from 'debug'
 import PropTypes from 'prop-types';
 // class
@@ -12,9 +14,11 @@ import TaskFormComponent from '../pure/forms/taskForm';
 const debug = createDebug('app:components:taskList')
 
 const TaskListComponent = () => {
-    const defaultTask1 = new Task('Example 1', 'Default description 1', true, LEVELS.NORMAL)
-    const defaultTask2 = new Task('Example 2', 'Default description 2', false, LEVELS.URGENT)
-    const defaultTask3 = new Task('Example 3', 'Default description 3', false, LEVELS.BLOCKING)
+    const navigate = useNavigate()
+
+    const defaultTask1 = new Task(1, 'Example 1', 'Default description 1', true, LEVELS.NORMAL)
+    const defaultTask2 = new Task(2, 'Example 2', 'Default description 2', false, LEVELS.URGENT)
+    const defaultTask3 = new Task(3, 'Example 3', 'Default description 3', false, LEVELS.BLOCKING)
     // Estado del componente
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
@@ -51,6 +55,12 @@ const TaskListComponent = () => {
         tempTasks.push(task)
         setTasks(tempTasks)
     }
+
+    function _goToDetail(task) {
+        console.log(task, 'task')
+        navigate(`/tasks/${task.id}`, { state: task })
+    }
+
     function _htmlTasksTable() {
         return (
             tasks.length > 0 ?
@@ -71,6 +81,7 @@ const TaskListComponent = () => {
                                 task={task}
                                 _complete={_completeTask}
                                 _remove={_removeTask}
+                                _toDetail={_goToDetail}
                             >
                             </TaskComponent>
                         )

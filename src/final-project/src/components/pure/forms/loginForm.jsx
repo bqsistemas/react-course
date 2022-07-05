@@ -2,6 +2,7 @@
  * Component to content form to login auth
  */
 
+import { useLocation, useNavigate  } from 'react-router-dom'
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
@@ -15,6 +16,7 @@ const loginSchema = Yup.object().shape({
 })
 
 const LoginFormComponent = () => {
+    const navigate = useNavigate()
 
     const initialCredentials = {
         email: '',
@@ -25,6 +27,7 @@ const LoginFormComponent = () => {
         await new Promise((r) => setTimeout(r, 1000));
         alert(JSON.stringify(values, null, 2));
         localStorage.setItem('credentials', values)
+        navigate('/', { replace: true })
     }
 
     return (
