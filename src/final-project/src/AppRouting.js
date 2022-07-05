@@ -5,6 +5,9 @@ import HomePage from './pages/home/HomePage';
 import NotFoundPage from './pages/errors/NotFoundPage';
 import Dashboard from './pages/dashboard/Dashboard';
 import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
+import TasksPage from './pages/tasks/TasksPage';
+import TaskDetailPage from './pages/tasks/TaskDetailPage';
 
 function AppRouting() {
 
@@ -17,6 +20,7 @@ function AppRouting() {
         <Route exact path='/' element={
           <Navigate to={loggedIn? 'dashboard' : 'signin'} />
         }/>
+        <Route exact path='/register' element={<RegisterPage/>}/>
         <Route exact path='/dashboard' element={
           loggedIn? 
           <Dashboard/>
@@ -24,6 +28,13 @@ function AppRouting() {
           <Navigate to="/signin" />
         }/>
 
+        <Route exact path='/tasks' element={
+          loggedIn? 
+          <TasksPage/>
+          :
+          <Navigate to="/signin" />
+        }/>
+        <Route exact path='/tasks/:id' element={<TaskDetailPage/>}/>
 
         
         <Route exact path='/signin' element={

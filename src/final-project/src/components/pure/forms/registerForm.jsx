@@ -1,3 +1,4 @@
+import { useLocation, useNavigate  } from 'react-router-dom'
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from 'formik';
@@ -5,10 +6,12 @@ import * as Yup from 'yup'
 // models
 import { User } from '../../../models/user.class';
 import { ROLES } from '../../../models/enums.class';
-
+// material UI
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 const RegisterFormComponent = () => {
-
+    const navigate = useNavigate()
     const user = new User()
     const initialValues = {
         userName: '',
@@ -112,9 +115,10 @@ const RegisterFormComponent = () => {
 
                             { !isSubmitting &&
                                 (
-                                    <button type="submit" className='btn btn-success my-4'>Register Account</button>
+                                    <Button type='submit' variant="contained" className='my-4'>Register Account</Button>
                                 )
                             }
+                            <Link className='mx-2' component="button" variant="body2" onClick={() => navigate('/signin')}>Iniciar sesión</Link>
                         </Form>
                     )
                 }

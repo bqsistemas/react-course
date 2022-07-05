@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RegisterFormComponent from '../../components/pure/forms/RegisterForm';
 
 
 const RegisterPage = () => {
     return (
         <div>
-            <h1>Register Page</h1>
+            <RegisterFormComponent></RegisterFormComponent>
         </div>
     );
 };

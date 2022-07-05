@@ -6,6 +6,9 @@ import { useLocation, useNavigate  } from 'react-router-dom'
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+// material UI
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 const loginSchema = Yup.object().shape({
     email: Yup.string()
@@ -90,9 +93,10 @@ const LoginFormComponent = () => {
                             } */}
                             { !isSubmitting &&
                                 (
-                                    <button type="submit" className='btn btn-success mt-4'>Login</button>
+                                    <Button type='submit' variant="contained" className='my-4'>Login</Button>
                                 )
                             }
+                            <Link className='mx-2' component="button" variant="body2" onClick={() => navigate('/register')}>Registrarme</Link>
                         </Form>
                     )
                 }

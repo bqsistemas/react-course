@@ -8,7 +8,7 @@ import { Task } from '../../models/task.class';
 import { LEVELS } from '../../models/enums.class';
 // components
 import TaskComponent from '../pure/Task';
-import TaskFormComponent from '../pure/forms/taskForm';
+import TaskFormComponent from '../pure/forms/TaskForm';
 
 // initialize
 const debug = createDebug('app:components:taskList')
