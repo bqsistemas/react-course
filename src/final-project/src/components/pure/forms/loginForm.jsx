@@ -87,7 +87,7 @@ const LoginFormComponent = () => {
                             } */}
                             { !isSubmitting &&
                                 (
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" className='btn btn-success mt-4'>Login</button>
                                 )
                             }
                         </Form>

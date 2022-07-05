@@ -49,7 +49,6 @@ const TaskFormComponent = ({ _add, length }) => {
     }
     return (
         <div>
-            <h3>Task form</h3>
             <Formik
                 initialValues={initialValues}
                 validationSchema={taskSchema}
