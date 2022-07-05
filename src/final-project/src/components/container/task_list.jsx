@@ -24,7 +24,7 @@ const TaskListComponent = () => {
         console.log('Task state has been modified')
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 1000)
         return () => {
             console.log('TaskList component is going to unmount')
         }
