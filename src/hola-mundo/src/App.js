@@ -16,6 +16,8 @@ import Father from './components/container/father';
 import ContactListExerciseComponent from './bootcamp/exercises/exercise_7_8_9/contactListExercise';
 import OptionalRender from './components/pure/optionalRender';
 import SquareExercise from './bootcamp/exercises/exercises_10_11_12/squareExercise';
+import AsyncExample from './bootcamp/examples/AsyncExample';
+import ObservableExample from './bootcamp/examples/ObservableExample';
 
 function App() {
   return (
@@ -40,7 +42,9 @@ function App() {
         {/* <Father></Father> */}
         {/* <ContactListExerciseComponent></ContactListExerciseComponent> */}
         {/* <OptionalRender></OptionalRender> */}
-        <SquareExercise></SquareExercise>
+        {/* <SquareExercise></SquareExercise> */}
+        {/* <AsyncExample></AsyncExample> */}
+        <ObservableExample></ObservableExample>
     </div>
   );
 }
