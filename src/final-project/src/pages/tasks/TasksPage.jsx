@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import TaskListComponent from '../../components/container/task_list';
+import TaskListComponent from '../../components/container/TaskList';
 
 
 const TasksPage = () => {

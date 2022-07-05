@@ -1,7 +1,7 @@
 import './App.css';
 // components
-import LoginFormComponent from './components/pure/forms/loginForm';
-import RegisterFormComponent from './components/pure/forms/registerForm';
+import LoginFormComponent from './components/pure/forms/LoginForm';
+import RegisterFormComponent from './components/pure/forms/RegisterForm';
 import TasksPage from './pages/tasks/TasksPage';
 
 function App() {
