@@ -19,6 +19,7 @@ import SquareExercise from './bootcamp/exercises/exercises_10_11_12/squareExerci
 import AsyncExample from './bootcamp/examples/AsyncExample';
 import ObservableExample from './bootcamp/examples/ObservableExample';
 import FetchExample from './bootcamp/examples/FetchExample';
+import AxiosExample from './bootcamp/examples/AxiosExample';
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
         {/* <SquareExercise></SquareExercise> */}
         {/* <AsyncExample></AsyncExample> */}
         {/* <ObservableExample></ObservableExample> */}
-        <FetchExample></FetchExample>
+        {/* <FetchExample></FetchExample> */}
+        <AxiosExample></AxiosExample>
     </div>
   );
 }

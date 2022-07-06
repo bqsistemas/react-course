@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // services
-import { getAllUsers, getPagedUsers, getUserDetails } from '../../services/FetchService';
+import { getAllUsers, getPagedUsers, getUserDetails, loginUser} from '../../services/FetchService';
 
 const FetchExample = () => {
 
@@ -10,6 +10,7 @@ const FetchExample = () => {
     const [totalUsers, setTotalUsers] = useState(0)
     const [totalPerPage, setTotalPerPage] = useState(0)
     const [selectedUser, setSelectedUser] = useState(null)
+    const [token, setToken] = useState('')
 
     useEffect(()=>{
         /*
@@ -68,6 +69,22 @@ const FetchExample = () => {
                 console.table(selectedUser)
             })
     }
+
+    const authUser = () => {
+        loginUser('eve.holt@reqres.in', 'cityslicka')
+            .then((response) => {
+                console.log(`TOKEN`, response.token)
+                setToken(response.token)
+                sessionStorage.setItem('token', response.token)
+            })
+            .catch((err) => {
+                alert(`Something error: ${err}`)
+            })
+            .finally(() => {
+                console.log('Ended obtaining login:')
+                console.table(selectedUser)
+            })
+    }
     // #endregion
     return (
         <div>
@@ -85,16 +102,24 @@ const FetchExample = () => {
                 2
             </button>
             <div>
-                <h3>User Details</h3>
-                { selectedUser && (
-                    <div>
-                        <p>Name: { selectedUser.first_name } { selectedUser.last_name } </p>
-                        <p>Email: { selectedUser.email }</p>
+                { selectedUser ? (
                         <div>
-                            <img alt='avatar' src={ selectedUser.avatar } style={ { width: '50px', height: '50px' } }/>
+                            <h3>User Details</h3>
+                            <p>Name: { selectedUser.first_name } { selectedUser.last_name } </p>
+                            <p>Email: { selectedUser.email }</p>
+                            <div>
+                                <img alt='avatar' src={ selectedUser.avatar } style={ { width: '50px', height: '50px' } }/>
+                            </div>
                         </div>
-                    </div>
-                ) }
+                    ) :
+                    (
+                        <h6>Please click on a User to see its details</h6>
+                    )
+                }
+            </div>
+            <div>
+                <h3>User Login</h3>
+                <button onClick={authUser}>Login</button>
             </div>
         </div>
     );
