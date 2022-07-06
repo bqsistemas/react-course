@@ -18,6 +18,7 @@ import OptionalRender from './components/pure/optionalRender';
 import SquareExercise from './bootcamp/exercises/exercises_10_11_12/squareExercise';
 import AsyncExample from './bootcamp/examples/AsyncExample';
 import ObservableExample from './bootcamp/examples/ObservableExample';
+import FetchExample from './bootcamp/examples/FetchExample';
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
         {/* <OptionalRender></OptionalRender> */}
         {/* <SquareExercise></SquareExercise> */}
         {/* <AsyncExample></AsyncExample> */}
-        <ObservableExample></ObservableExample>
+        {/* <ObservableExample></ObservableExample> */}
+        <FetchExample></FetchExample>
     </div>
   );
 }
