@@ -1,10 +1,15 @@
 import axios from 'axios'
 
 // Default config for AXIOS
-export default axios.create(
-    {
-        baseURL: 'https://randomuser.me/api',
-        responseType: 'json',
-        timeout: 6000,
-    }
-)
+
+const createAxios = (baseURL) => {
+    return axios.create(
+        {
+            baseURL,
+            responseType: 'json',
+            timeout: 6000,
+        }
+    )
+}
+
+export default createAxios

@@ -20,6 +20,7 @@ import AsyncExample from './bootcamp/examples/AsyncExample';
 import ObservableExample from './bootcamp/examples/ObservableExample';
 import FetchExample from './bootcamp/examples/FetchExample';
 import AxiosExample from './bootcamp/examples/AxiosExample';
+import JokesAxios from './components/pure/JokesAxios';
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
         {/* <AsyncExample></AsyncExample> */}
         {/* <ObservableExample></ObservableExample> */}
         {/* <FetchExample></FetchExample> */}
-        <AxiosExample></AxiosExample>
+        {/* <AxiosExample></AxiosExample> */}
+        <JokesAxios></JokesAxios>
     </div>
   );
 }
