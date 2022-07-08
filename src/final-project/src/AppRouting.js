@@ -12,7 +12,7 @@ import TaskDetailPage from './pages/tasks/TaskDetailPage';
 function AppRouting() {
 
   // TODO: Change to value from sessionStorage
-  let loggedIn = true
+  let loggedIn = false
 
   return (
     <Router>

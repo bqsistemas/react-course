@@ -10,6 +10,9 @@ import * as Yup from 'yup'
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 
+// services
+import { loginUser } from '../../../services/AxiosService.js'
+
 const loginSchema = Yup.object().shape({
     email: Yup.string()
                 .email('Invalid email format')
@@ -27,10 +30,22 @@ const LoginFormComponent = () => {
     }
 
     async function onSubmitLoginForm(values){
-        await new Promise((r) => setTimeout(r, 1000));
         alert(JSON.stringify(values, null, 2));
-        localStorage.setItem('credentials', values)
-        navigate('/', { replace: true })
+
+        await loginUser(values)
+            .then((response) => {
+                console.log(response)
+                if(response.data.token) {
+                    localStorage.setItem('credentials', values.email)
+                    sessionStorage.setItem('token', response.data.token)
+                    navigate('/', { replace: true })
+                }else{
+                    sessionStorage.removeItem('token')
+                    localStorage.removeItem('credentials')
+                }
+            })
+            .catch((err) => console.log(err))
+            .finally(() => {})
     }
 
     return (
