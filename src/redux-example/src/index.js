@@ -15,10 +15,10 @@ let appStore = createAppStore()
 let appAsyncStore = createAppAsyncStore()
 
 ReactDOM.render(
-  <Provider store={appStore}>
+  <Provider store={appAsyncStore}>
     <React.StrictMode>
-      <App />
-      {/* <AppReduxSaga /> */}
+      {/* <App /> */}
+      <AppReduxSaga />
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
