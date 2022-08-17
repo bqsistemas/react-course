@@ -25,8 +25,8 @@ const LoginFormComponent = () => {
     const navigate = useNavigate()
 
     const initialCredentials = {
-        email: '',
-        password: ''
+        email: 'eve.holt@reqres.in',
+        password: 'cityslicka'
     }
 
     async function onSubmitLoginForm(values){

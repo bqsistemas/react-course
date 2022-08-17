@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
 import { LEVELS } from '../../models/enums.class';
 // components
-import TaskComponent from '../pure/Task';
-import TaskFormComponent from '../pure/forms/TaskForm';
+import TaskComponent from '../pure/task';
+import TaskFormComponent from '../pure/forms/taskForm';
 
 // initialize
 const debug = createDebug('app:components:taskList')
