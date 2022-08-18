@@ -5,7 +5,7 @@ const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin') // Para el template del html que va a usar webpack
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // para reducir los css
-const { SourceMapDevtoolPlugin } = require('webpack') // Para conocer el Source Map de nuestro proyecto
+const { SourceMapDevToolPlugin } = require('webpack') // Para conocer el Source Map de nuestro proyecto
 
 // Configuración del puerto
 
@@ -30,7 +30,7 @@ module.exports = {
     module: {
         rules: [
             // reglas para archivos de JS y JSX
-            // tienen que pasar el LINTING para poder pasar 
+            // tienen que pasar el LINTING para poder pasar
             {
                 enforce: 'pre',
                 test: /(\.js|\.jsx)$/,
@@ -42,9 +42,11 @@ module.exports = {
             },
             // reglas para archivos JS y JSX
             {
-                test: /(\.js|\.jsx)$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                user: {
+                    loader: 'babel-loader'
+                },
                 query: {
                     presets: [
                         '@babel/env',
@@ -54,7 +56,7 @@ module.exports = {
             },
             // reglas para archivos css, sass y scss para minificarlos y cargarlos en el bundle
             {
-                test: /(\.css|\.scss|\.sass)$/,
+                test: /(\.css|\.scss)$/,
                 loader: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -63,7 +65,7 @@ module.exports = {
             },
             // reglas para los archivos de imágenes
             {
-                test: /(\.png|\.jpe?g|\.gif)$/,
+                test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader'
@@ -80,7 +82,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: './css/styles.css'
         }),
-        new SourceMapDevtoolPlugin({
+        new SourceMapDevToolPlugin({
             filename: '[file].map'
         })
     ],

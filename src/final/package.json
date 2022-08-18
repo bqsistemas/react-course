@@ -9,8 +9,8 @@
     "lint:fix": "eslint --fix ./src",
     "dev": "webpack-dev-server --mode development --hot --open --content-base",
     "docs:build": "documentation build src/** -f html -o docs",
-    "build": "webpack",
-    "build:prod": "webpack"
+    "build": "webpack --mode development",
+    "build:prod": "webpack --mode production"
   },
   "author": "Jhon Barrantes (bqsistemas)",
   "license": "ISC",
