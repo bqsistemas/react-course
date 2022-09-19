@@ -4,13 +4,14 @@
   "description": "ReactJs Final Project´s Open Bootcamp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Comando no especificado\" && exit 1",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "dev": "webpack-dev-server --mode development --hot --open --content-base",
+    "deploy:dev": "webpack-dev-server --mode development --hot --open --static",
     "docs:build": "documentation build src/** -f html -o docs",
     "build": "webpack --mode development",
-    "build:prod": "webpack --mode production"
+    "build:prod": "webpack --mode production",
+    "deploy:prod": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod"
   },
   "author": "Jhon Barrantes (bqsistemas)",
   "license": "ISC",
@@ -26,6 +27,7 @@
     "documentation": "^13.2.5",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
