@@ -75,5 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     - hooks: own hooks or logic with react hooks
     - routes: relationship of routes with components
     - pages: contain components that render a navigable page
-    - models: create specify the data types we are going to work with
+    - models: create specify the data types we are going to work with 
 
